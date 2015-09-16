@@ -1,0 +1,17 @@
+{
+    "name": "lancerhe/php-yafunit",
+    "description": "yaf phpunit for application test.",
+    "authors": [
+        {
+            "name": "Lancer He",
+            "email": "lancer.he@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-0": {
+            "Yafunit": "src"
+        }
+    }
+}
