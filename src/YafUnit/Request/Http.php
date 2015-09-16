@@ -64,6 +64,7 @@ final class Http extends \Yaf\Request\Http {
     }
 
     public function getServer($name, $default = null) {
+        return;
     }
 
     public function getEnv($name, $default = null) {
