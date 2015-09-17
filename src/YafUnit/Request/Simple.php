@@ -9,6 +9,7 @@
 namespace YafUnit\Request;
 
 use YafUnit\Request\Base;
+use YafUnit\View\Simple as View;
 
 final class Simple extends \Yaf\Request_Abstract {
 
@@ -29,6 +30,6 @@ final class Simple extends \Yaf\Request_Abstract {
         $this->action     = $action;
         $this->params     = $params;
         // 初始化一个新的测试请求时，清空模板
-        \YafUnit\View\Simple::getInstance()->clear();
+        View::getInstance()->clear();
     }
 }

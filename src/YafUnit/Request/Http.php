@@ -9,6 +9,7 @@
 namespace YafUnit\Request;
 
 use YafUnit\RequestAbstract;
+use YafUnit\View\Simple as View;
 
 final class Http extends \Yaf\Request\Http {
 
@@ -27,7 +28,7 @@ final class Http extends \Yaf\Request\Http {
         // \Yaf\Dispatcher::getInstance()->getRouter()->route($this);
 
         // 初始化一个新的测试请求时，清空模板
-        \YafUnit\View\Simple::getInstance()->clear();
+        View::getInstance()->clear();
     }
 
     protected function _initParseRequestUri($request_uri) {
