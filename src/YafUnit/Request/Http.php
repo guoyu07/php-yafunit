@@ -8,7 +8,11 @@
 
 namespace YafUnit\Request;
 
+use YafUnit\RequestAbstract;
+
 final class Http extends \Yaf\Request\Http {
+
+    use Base;
 
     public function __construct($request_uri = null, $base_uri = null) {
         parent::__construct($request_uri, $base_uri);
@@ -23,7 +27,7 @@ final class Http extends \Yaf\Request\Http {
         // \Yaf\Dispatcher::getInstance()->getRouter()->route($this);
 
         // 初始化一个新的测试请求时，清空模板
-        \YafUnit\View::getInstance()->clear();
+        \YafUnit\View\Simple::getInstance()->clear();
     }
 
     protected function _initParseRequestUri($request_uri) {
@@ -36,58 +40,5 @@ final class Http extends \Yaf\Request\Http {
         foreach ($query as $key => $value) {
             $this->setQuery($key, $value);
         }
-    }
-
-    public function setMethod($method) {
-        $this->method = $method;
-    }
-
-
-    public function getQuery($name = null) {
-        if (is_null($name)) return $_GET;
-        return isset($_GET[$name]) ? $_GET[$name] : null;
-    }
-
-    public function getPost($name = null) {
-        if (is_null($name)) return $_POST;
-        return isset($_POST[$name]) ? $_POST[$name] : null;
-    }
-
-    public function getCookie($name = null) {
-        if ( is_null($name) ) return $_COOKIE;
-        return isset($_COOKIE[$name]) ? $_COOKIE[$name] : null;
-    }
-
-    public function getFiles($name = null) {
-        if (is_null($name)) return $_FILES;
-        return isset($_FILES[$name]) ? $_FILES[$name] : null;
-    }
-
-    public function getServer($name, $default = null) {
-        return;
-    }
-
-    public function getEnv($name, $default = null) {
-    }
-
-    public function setPost($name, $value) {
-        $this->setMethod('Post');
-        $_POST[$name] = $value;
-        return $this;
-    }
-
-    public function setQuery($name, $value) {
-        $_GET[$name] = $value;
-        return $this;
-    }
-
-    public function setCookie($name, $value) {
-        $_COOKIE[$name] = $value;
-        return $this;
-    }
-
-    public function setServer($name, $value) {
-        $_SERVER[$name] = $value;
-        return $this;
     }
 }
