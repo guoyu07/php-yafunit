@@ -40,4 +40,36 @@ class SimpleTest extends \PHPUnit_Framework_TestCase {
         $this->Request->setPost('sex', '1');
         $this->assertEquals('post', $this->Request->getMethod());
     }
+
+    /**
+     * @test
+     */
+    public function getFiles() {
+        $this->Request->setFiles(['age' => '2']);
+        $this->assertEquals(['age' => '2'], $this->Request->getFiles());
+    }
+
+    /**
+     * @test
+     */
+    public function getCookie() {
+        $this->Request->setCookie('age', 27);
+        $this->assertEquals(27, $this->Request->getCookie('age'));
+    }
+
+    /**
+     * @test
+     */
+    public function getServer() {
+        $this->Request->setServer('age', 27);
+        $this->assertEquals(27, $this->Request->getServer('age'));
+    }
+
+    /**
+     * @test
+     */
+    public function getEnv() {
+        $this->Request->setEnv('age', 27);
+        $this->assertEquals(27, $this->Request->getEnv('age'));
+    }
 }

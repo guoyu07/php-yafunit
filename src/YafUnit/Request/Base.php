@@ -41,19 +41,18 @@ trait Base {
         return isset($this->_cookie[$name]) ? $this->_cookie[$name] : null;
     }
 
-    public function getFiles($name = null) {
-        if (is_null($name)) return $this->_files;
-        return isset($this->_files[$name]) ? $this->_files[$name] : null;
-    }
-
     public function getServer($name, $default = null) {
         if (is_null($name)) return $this->_server;
-        return isset($this->_server[$name]) ? $this->_server[$name] : null;
+        return isset($this->_server[$name]) ? $this->_server[$name] : $default;
     }
 
     public function getEnv($name, $default = null) {
         if (is_null($name)) return $this->_env;
-        return isset($this->_env[$name]) ? $this->_env[$name] : null;
+        return isset($this->_env[$name]) ? $this->_env[$name] : $default;
+    }
+
+    public function getFiles() {
+        return $this->_files;
     }
 
     public function setPost($name, $value) {
@@ -71,6 +70,10 @@ trait Base {
 
     public function setServer($name, $value) {
         $this->_server[$name] = $value;
+    }
+
+    public function setFiles($files) {
+        $this->_files = $files;
     }
 
     public function setEnv($name, $value) {
