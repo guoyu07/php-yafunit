@@ -19,7 +19,7 @@ final class Simple extends \Yaf\View\Simple {
      */
     public static function getInstance() {
         if ( ! self::$_instance) {
-            self::$_instance = new self( ROOT_PATH, array() );
+            self::$_instance = new self( __DIR__, [] );
         }
         return self::$_instance;
     }

@@ -10,58 +10,70 @@ namespace YafUnit\Request;
 
 trait Base {
 
+    protected $_get    = [];
+
+    protected $_post   = [];
+
+    protected $_cookie = [];
+
+    protected $_files  = [];
+
+    protected $_server = [];
+
+    protected $_env    = [];
+
     public function setMethod($method) {
         $this->method = $method;
     }
 
     public function getQuery($name = null) {
-        if (is_null($name)) return $_GET;
-        return isset($_GET[$name]) ? $_GET[$name] : null;
+        if (is_null($name)) return $this->_get;
+        return isset($this->_get[$name]) ? $this->_get[$name] : null;
     }
 
     public function getPost($name = null) {
-        if (is_null($name)) return $_POST;
-        return isset($_POST[$name]) ? $_POST[$name] : null;
+        if (is_null($name)) return $this->_post;
+        return isset($this->_post[$name]) ? $this->_post[$name] : null;
     }
 
     public function getCookie($name = null) {
-        if ( is_null($name) ) return $_COOKIE;
-        return isset($_COOKIE[$name]) ? $_COOKIE[$name] : null;
+        if ( is_null($name) ) return $this->_cookie;
+        return isset($this->_cookie[$name]) ? $this->_cookie[$name] : null;
     }
 
     public function getFiles($name = null) {
-        if (is_null($name)) return $_FILES;
-        return isset($_FILES[$name]) ? $_FILES[$name] : null;
+        if (is_null($name)) return $this->_files;
+        return isset($this->_files[$name]) ? $this->_files[$name] : null;
     }
 
     public function getServer($name, $default = null) {
-        if (is_null($name)) return $_SERVER;
-        return isset($_SERVER[$name]) ? $_SERVER[$name] : null;
+        if (is_null($name)) return $this->_server;
+        return isset($this->_server[$name]) ? $this->_server[$name] : null;
     }
 
     public function getEnv($name, $default = null) {
-        if (is_null($name)) return $_ENV;
-        return isset($_ENV[$name]) ? $_ENV[$name] : null;
+        if (is_null($name)) return $this->_env;
+        return isset($this->_env[$name]) ? $this->_env[$name] : null;
     }
 
     public function setPost($name, $value) {
         $this->setMethod('post');
-        $_POST[$name] = $value;
+        $this->_post[$name] = $value;
     }
 
     public function setQuery($name, $value) {
-        $_GET[$name] = $value;
+        $this->_get[$name] = $value;
     }
 
     public function setCookie($name, $value) {
-        $_COOKIE[$name] = $value;
+        $this->_cookie[$name] = $value;
     }
 
     public function setServer($name, $value) {
-        $_SERVER[$name] = $value;
+        $this->_server[$name] = $value;
     }
 
     public function setEnv($name, $value) {
-        $_ENV[$name] = $value;
+        $this->_env[$name] = $value;
     } 
 }

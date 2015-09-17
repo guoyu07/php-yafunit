@@ -22,7 +22,7 @@ final class Simple extends \Yaf\Request_Abstract {
      * @param string $action     方法
      * @param array  $params     参数
      */
-    public function __construct($method, $module, $controller, $action, $params = array()) {
+    public function __construct($method, $module, $controller, $action, $params = []) {
         $this->method     = $method;
         $this->module     = $module;
         $this->controller = $controller;
