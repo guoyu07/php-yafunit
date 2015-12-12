@@ -45,4 +45,11 @@ final class Simple extends \Yaf\View\Simple {
     public function display( $view_path, $tpl_vars = null) {
         return false;
     }
+
+    /**
+     * 继承Simple类的其他方法通过assign做验收测试
+     */
+    public function __call($name, $args) {
+        $this->assign($name, $args);
+    }
 }
