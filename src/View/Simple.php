@@ -1,5 +1,5 @@
 <?php
-namespace YafUnit\View;
+namespace LancerHe\YafUnit\View;
 
 /**
  * Class Base
@@ -17,7 +17,7 @@ trait Base {
     /**
      * 初始化一个单例对象，不需要模板路径以及任何渲染参数，随意设置一个模板路径
      *
-     * @return View object
+     * @return Base object
      */
     public static function getInstance() {
         if ( ! self::$_instance ) {

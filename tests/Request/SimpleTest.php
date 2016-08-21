@@ -1,18 +1,23 @@
 <?php
+namespace LancerHe\YafUnit\Tests\Request;
+
+use LancerHe\YafUnit\Request\Simple;
+
 /**
- * Simple Request Test
- * @author Lancer He <lancer.he@gmail.com>
- * @since  2015-09-16
+ * Class SimpleTest
+ *
+ * @package LancerHe\YafUnit\Tests\Request
+ * @author  Lancer He <lancer.he@gmail.com>
  */
-
-namespace YafUnit\Tests\Request;
-
-use YafUnit\Request\Simple;
-
 class SimpleTest extends \PHPUnit_Framework_TestCase {
-
+    /**
+     * @var Simple
+     */
     public $Request;
 
+    /**
+     *
+     */
     public function setUp() {
         $this->Request = new Simple('get', 'module', 'controller', 'action', ["id" => 2, "name" => "lancer"]);
     }

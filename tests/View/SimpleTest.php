@@ -1,22 +1,21 @@
 <?php
+namespace LancerHe\YafUnit\Tests\View;
+
+use LancerHe\YafUnit\View\Simple;
+
 /**
- * Simple View Test
- * @author Lancer He <lancer.he@gmail.com>
- * @since  2015-09-16
+ * Class SimpleTest
+ *
+ * @package LancerHe\YafUnit\Tests\View
+ * @author  Lancer He <lancer.he@gmail.com>
  */
-
-namespace YafUnit\Tests\View;
-
-use YafUnit\View\Simple;
-
 class SimpleTest extends \PHPUnit_Framework_TestCase {
-
     /**
      * @test
      */
     public function getInstance() {
         $View = Simple::getInstance();
-        $this->assertEquals('YafUnit\View\Simple', get_class($View));
+        $this->assertEquals('LancerHe\YafUnit\View\Simple', get_class($View));
     }
 
     /**
@@ -24,7 +23,7 @@ class SimpleTest extends \PHPUnit_Framework_TestCase {
      */
     public function render() {
         $View = new Simple(__DIR__, []);
-        $this->assertFalse( $View->render('test/index') );
+        $this->assertFalse($View->render('test/index'));
     }
 
     /**
@@ -32,6 +31,6 @@ class SimpleTest extends \PHPUnit_Framework_TestCase {
      */
     public function display() {
         $View = new Simple(__DIR__, []);
-        $this->assertFalse( $View->display('test/index') );
+        $this->assertFalse($View->display('test/index'));
     }
 }

@@ -1,20 +1,25 @@
 <?php
+namespace LancerHe\YafUnit\Tests\Request;
+
+use LancerHe\YafUnit\Request\Http;
+
 /**
- * Simple Request Test
- * @author Lancer He <lancer.he@gmail.com>
- * @since  2015-09-16
+ * Class HttpTest
+ *
+ * @package LancerHe\YafUnit\Tests\Request
+ * @author  Lancer He <lancer.he@gmail.com>
  */
-
-namespace YafUnit\Tests\Request;
-
-use YafUnit\Request\Http;
-
 class HttpTest extends \PHPUnit_Framework_TestCase {
-
+    /**
+     * @var Http
+     */
     public $Request;
 
+    /**
+     *
+     */
     public function setUp() {
-        $this->Request = new \YafUnit\Request\Http("/module/controller/action?id=2&sex=1");
+        $this->Request = new Http("/module/controller/action?id=2&sex=1");
     }
 
     /**

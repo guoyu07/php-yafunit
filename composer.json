@@ -18,12 +18,12 @@
     },
     "autoload" : {
         "psr-4" : {
-            "YafUnit\\" : "src"
+            "LancerHe\\YafUnit\\" : "src"
         }
     },
     "autoload-dev" : {
         "psr-4" : {
-            "YafUnit\\Test\\" : "tests/"
+            "LancerHe\\YafUnit\\Test\\" : "tests/"
         }
     }
 }

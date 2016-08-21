@@ -1,18 +1,16 @@
 <?php
-namespace YafUnit\Request;
+namespace LancerHe\YafUnit\Request;
 
-use YafUnit\Request\Base;
-use YafUnit\View\Simple as View;
+use LancerHe\YafUnit\View\Simple as View;
 
 /**
  * Class SimpleTrait
- * \YafUnit\Request\Simple 通过模块/控制器/方法等模拟一个Request对象
+ * \LancerHe\YafUnit\Request\Simple 通过模块/控制器/方法等模拟一个Request对象
  *
  * @package YafUnit\Request
  * @author  Lancer He <lancer.he@gmail.com>
  */
 trait SimpleTrait {
-
     /**
      * 初始化
      *

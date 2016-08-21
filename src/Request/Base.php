@@ -1,5 +1,5 @@
 <?php
-namespace YafUnit\Request;
+namespace LancerHe\YafUnit\Request;
 
 /**
  * Class Base
