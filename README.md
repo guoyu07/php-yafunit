@@ -18,7 +18,7 @@ Create or modify your composer.json
 ``` json
 {
     "require": {
-        "lancerhe/php-yafunit": "dev-master"
+        "lancerhe/php-yafunit": "1.2.0"
     }
 }
 ```
